@@ -1,0 +1,6 @@
+classes = 10
+train  = /mnt/hdd2/darknet/sanjabu/train_list.txt
+valid  = /mnt/hdd1/darknet/0808/BDD_8class_test.txt
+names = /mnt/hdd2/darknet/sanjabu/san10.names
+backup = /mnt/hdd2/darknet/sanjabu/0930train/backup
+

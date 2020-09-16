@@ -24,10 +24,40 @@ extern "C" {
 #define SECRET_NUM -1234
 extern int gpu_index;
 
+typedef struct sorting{
+//프레임카운트(몇번째 프레임인지)
+//박스id(한 이미지에서 박스가 여러개 나올때 id)
+//레이블(트럭인지 차인지)
+//박스좌표4개(centerX,centerY,width,height)
+//컨피던스
+
+    int tmp_fr;
+    int tmp_label;
+    float tmp_cenX;
+    float tmp_cenY;
+    int tmp_wid;
+    int tmp_height;
+    float tmp_conf;
+}sorting;
+
+
+
 typedef struct{
     int classes;
     char **names;
 } metadata;
+
+typedef struct {
+    int left_cnt;
+    int center_cnt;
+    int right_cnt;
+    int gt_left_cnt;
+    int gt_center_cnt;
+    int gt_right_cnt;
+    int all_left_cnt;
+    int all_center_cnt;
+    int all_right_cnt;
+}car_cnt;
 
 metadata get_metadata(char *file);
 
@@ -732,7 +762,7 @@ float box_iou(box a, box b);
 data load_all_cifar10();
 box_label *read_boxes(char *filename, int *n);
 box float_to_box(float *f, int stride);
-void draw_detections(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes);
+car_cnt draw_detections(image im, char *gt_input, detection *dets, int num, float thresh, char **names, image **alphabet, int classes,char *txtpath);
 
 matrix network_predict_data(network *net, data test);
 image **load_alphabet();
