@@ -9,6 +9,3 @@
 
 
 -gpus num : gpu 설정한다.
-
-예시)
-./darknet detector test /mnt/hdd2/darknet/sanjabu/san10_FVL.data /mnt/hdd2/darknet/sanjabu/san10.cfg /mnt/hdd2/darknet/sanjabu/0930train/backup/san10_52000.weights /mnt/hdd2/darknet/sanjabu/201705M02D14H26m58s/CAM_FL/ /mnt/hdd2/darknet/sanjabu/0929/201705M02D14H26m58s_GT/ -out /mnt/hdd2/darknet/sanjabu/1001/out_52000_re -dont_show -gpus 1
